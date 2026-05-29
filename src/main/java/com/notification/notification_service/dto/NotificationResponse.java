@@ -1,5 +1,6 @@
 package com.notification.notification_service.dto;
 
+import com.notification.notification_service.enums.NotificationStatus;
 import lombok.Builder;
 
 import java.time.LocalDateTime;
@@ -9,6 +10,6 @@ import java.util.UUID;
 public record NotificationResponse(UUID id,
                                    String type,
                                    String recipient,
-                                   String status,
+                                   NotificationStatus status,
                                    LocalDateTime createdAt) {
 }

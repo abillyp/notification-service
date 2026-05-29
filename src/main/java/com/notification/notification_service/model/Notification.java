@@ -1,5 +1,6 @@
 package com.notification.notification_service.model;
 
+import com.notification.notification_service.enums.NotificationStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -31,7 +32,8 @@ public class Notification {
 
     private String priority;
 
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private NotificationStatus status;
 
     @Column(columnDefinition = "jsonb")
     @JdbcTypeCode(SqlTypes.JSON)
